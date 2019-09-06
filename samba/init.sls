@@ -1,6 +1,6 @@
 {% from "samba/map.jinja" import samba with context %}
 
-{%- if salt['pillar.get']('samba', None) is defined %}
+{%- if salt['pillar.get']('samba', False) %}
 {% if grains.os not in ('MacOS', 'Windows',) %}
 
   {% if samba.preinstall.cmd %}
